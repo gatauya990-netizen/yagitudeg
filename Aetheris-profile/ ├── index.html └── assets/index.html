@@ -1,845 +1,702 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-
-<title>Aetheris. | Mobile Legends Player</title>
-
-<meta name="description"
-content="Aetheris. — Mobile Legends player dengan Fanny sebagai signature hero. Immortal • 62.8% Win Rate • All Role.">
-
-<meta name="keywords"
-content="Aetheris, Mobile Legends, Fanny, Galactic Starhawk, Immortal, MLBB">
-
-<meta name="author" content="Aetheris.">
-
-<meta property="og:title" content="Aetheris. | Mobile Legends Player">
-<meta property="og:description"
-content="Immortal • 62.8% WR • All Role • Fanny">
-<meta property="og:type" content="website">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
-
-<style>
-
-:root{
-  --cyan:#00eaff;
-  --blue:#168cff;
-  --bg:#02060b;
-  --panel:rgba(5,15,24,.78);
-  --text:#eefaff;
-  --muted:#7893a3;
-  --border:rgba(0,234,255,.18);
-}
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  background:
-    radial-gradient(circle at 80% 15%,rgba(0,210,255,.15),transparent 28%),
-    radial-gradient(circle at 10% 80%,rgba(0,100,255,.12),transparent 30%),
-    var(--bg);
-  color:var(--text);
-  font-family:Rajdhani,sans-serif;
-  overflow-x:hidden;
-}
-
-body:before{
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  opacity:.12;
-  background-image:
-    linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
-  background-size:45px 45px;
-}
-
-/* HEADER */
-
-header{
-  width:100%;
-  max-width:1250px;
-  margin:auto;
-  padding:25px 30px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  position:relative;
-  z-index:5;
-}
-
-.logo{
-  font-family:Orbitron;
-  font-weight:900;
-  letter-spacing:4px;
-}
-
-.logo span{
-  color:var(--cyan);
-}
-
-.online{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  color:#9bdce7;
-  font-size:12px;
-  letter-spacing:2px;
-}
-
-.dot{
-  width:8px;
-  height:8px;
-  border-radius:50%;
-  background:var(--cyan);
-  box-shadow:0 0 15px var(--cyan);
-}
-
-/* MAIN */
-
-main{
-  max-width:1250px;
-  margin:auto;
-  padding:20px 30px 50px;
-}
-
-/* HERO */
-
-.hero{
-  min-height:620px;
-  position:relative;
-  overflow:hidden;
-
-  border:1px solid var(--border);
-
-  background:
-    linear-gradient(
-      90deg,
-      rgba(2,7,12,.98) 0%,
-      rgba(2,7,12,.90) 35%,
-      rgba(2,7,12,.18) 100%
-    );
-
-  box-shadow:
-    inset 0 0 70px rgba(0,200,255,.04),
-    0 0 60px rgba(0,180,255,.07);
-}
-
-.hero:after{
-  content:"";
-  position:absolute;
-  width:520px;
-  height:520px;
-  right:80px;
-  top:50px;
-  border-radius:50%;
-  border:1px solid rgba(0,234,255,.14);
-  box-shadow:
-    0 0 50px rgba(0,234,255,.08),
-    inset 0 0 50px rgba(0,234,255,.05);
-}
-
-.hero-content{
-  position:relative;
-  z-index:4;
-  width:47%;
-  padding:75px 60px;
-}
-
-.eyebrow{
-  color:var(--cyan);
-  font-family:Orbitron;
-  font-size:11px;
-  letter-spacing:4px;
-  margin-bottom:20px;
-}
-
-h1{
-  font-family:Orbitron;
-  font-size:clamp(45px,6vw,80px);
-  line-height:.95;
-  letter-spacing:-3px;
-}
-
-h1 span{
-  display:block;
-  color:transparent;
-  -webkit-text-stroke:1px rgba(255,255,255,.6);
-}
-
-.desc{
-  margin-top:25px;
-  max-width:440px;
-  color:var(--muted);
-  font-size:17px;
-  line-height:1.5;
-}
-
-.buttons{
-  margin-top:32px;
-  display:flex;
-  gap:10px;
-}
-
-.btn{
-  padding:12px 20px;
-  border:1px solid rgba(0,234,255,.35);
-  color:white;
-  text-decoration:none;
-  background:rgba(0,234,255,.05);
-  font-family:Orbitron;
-  font-size:10px;
-  letter-spacing:1px;
-  transition:.25s;
-}
-
-.btn:hover{
-  background:var(--cyan);
-  color:#001017;
-  box-shadow:0 0 25px rgba(0,234,255,.4);
-}
-
-/* FANNY */
-
-.fanny{
-  position:absolute;
-  z-index:3;
-  right:-50px;
-  bottom:-20px;
-  width:65%;
-  height:100%;
-  display:flex;
-  justify-content:center;
-  align-items:flex-end;
-}
-
-.fanny img{
-  width:100%;
-  height:100%;
-  object-fit:contain;
-  object-position:right bottom;
-
-  filter:
-    drop-shadow(0 0 25px rgba(0,234,255,.25))
-    drop-shadow(0 0 70px rgba(0,100,255,.15));
-}
-
-/* HUD */
-
-.hud{
-  margin-top:18px;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:12px;
-}
-
-.card{
-  background:var(--panel);
-  border:1px solid var(--border);
-  padding:20px;
-  position:relative;
-  backdrop-filter:blur(12px);
-}
-
-.card:after{
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:0;
-  width:35%;
-  height:2px;
-  background:var(--cyan);
-  box-shadow:0 0 12px var(--cyan);
-}
-
-.label{
-  color:#698291;
-  font-family:Orbitron;
-  font-size:9px;
-  letter-spacing:2px;
-}
-
-.value{
-  margin-top:8px;
-  font-family:Orbitron;
-  font-weight:800;
-  font-size:21px;
-}
-
-.cyan{
-  color:var(--cyan);
-  text-shadow:0 0 15px rgba(0,234,255,.35);
-}
-
-/* SECTION */
-
-.section{
-  margin-top:22px;
-}
-
-.title{
-  font-family:Orbitron;
-  font-size:17px;
-  letter-spacing:3px;
-  margin-bottom:12px;
-}
-
-/* PROFILE */
-
-.profile{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
-}
-
-.row{
-  display:flex;
-  justify-content:space-between;
-  padding:13px 0;
-  border-bottom:1px solid rgba(255,255,255,.06);
-}
-
-.row:last-child{
-  border-bottom:0;
-}
-
-.row span:first-child{
-  color:var(--muted);
-}
-
-.row span:last-child{
-  color:var(--cyan);
-  font-family:Orbitron;
-  font-size:11px;
-}
-
-/* RANK */
-
-.rank{
-  display:flex;
-  align-items:center;
-  gap:20px;
-  min-height:150px;
-}
-
-.rank img{
-  width:105px;
-  height:105px;
-  object-fit:contain;
-  filter:drop-shadow(0 0 20px rgba(0,234,255,.45));
-}
-
-.rank h2{
-  font-family:Orbitron;
-  font-size:26px;
-}
-
-.rank p{
-  margin-top:5px;
-  color:var(--muted);
-}
-
-/* BUILD */
-
-.build-top{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:15px;
-  margin-bottom:12px;
-}
-
-.retri{
-  display:flex;
-  align-items:center;
-  gap:10px;
-
-  border:1px solid rgba(0,234,255,.22);
-  background:rgba(0,234,255,.05);
-  padding:7px 12px;
-}
-
-.retri img{
-  width:38px;
-  height:38px;
-  object-fit:contain;
-  filter:drop-shadow(0 0 9px rgba(0,234,255,.55));
-}
-
-.retri strong{
-  display:block;
-  font-family:Orbitron;
-  font-size:10px;
-}
-
-.retri small{
-  color:var(--cyan);
-  font-size:9px;
-}
-
-.items{
-  display:grid;
-  grid-template-columns:repeat(6,1fr);
-  gap:10px;
-}
-
-.item{
-  text-align:center;
-  padding:11px 6px;
-  border:1px solid rgba(0,234,255,.14);
-  background:rgba(0,0,0,.25);
-  transition:.25s;
-}
-
-.item:hover{
-  transform:translateY(-4px);
-  border-color:var(--cyan);
-  box-shadow:0 0 20px rgba(0,234,255,.15);
-}
-
-.item img{
-  width:68px;
-  height:68px;
-  object-fit:contain;
-  border-radius:7px;
-}
-
-.item-name{
-  display:block;
-  margin-top:7px;
-  color:#a9bec9;
-  font-size:11px;
-}
-
-/* SOCIAL */
-
-.socials{
-  display:flex;
-  gap:10px;
-}
-
-.social{
-  flex:1;
-  padding:17px;
-  color:white;
-  text-decoration:none;
-  background:rgba(255,255,255,.025);
-  border:1px solid rgba(255,255,255,.08);
-  transition:.25s;
-}
-
-.social:hover{
-  border-color:var(--cyan);
-}
-
-.social small{
-  color:#6f8998;
-  display:block;
-  margin-bottom:4px;
-}
-
-.social strong{
-  font-family:Orbitron;
-  font-size:12px;
-}
-
-/* FOOTER */
-
-footer{
-  text-align:center;
-  margin-top:35px;
-  color:#49616f;
-  font-size:10px;
-  letter-spacing:2px;
-}
-
-/* MOBILE */
-
-@media(max-width:850px){
-
-  header{
-    padding:20px 15px;
-  }
-
-  main{
-    padding:15px;
-  }
-
-  .hero{
-    min-height:680px;
-  }
-
-  .hero-content{
-    width:100%;
-    padding:45px 25px;
-  }
-
-  .fanny{
-    width:105%;
-    height:53%;
-    right:-30px;
-    bottom:-15px;
-    opacity:.9;
-  }
-
-  .hero:after{
-    width:350px;
-    height:350px;
-    right:-30px;
-    top:320px;
-  }
-
-  .hud{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .profile{
-    grid-template-columns:1fr;
-  }
-
-  .items{
-    grid-template-columns:repeat(3,1fr);
-  }
-
-}
-
-@media(max-width:480px){
-
-  .hero{
-    min-height:650px;
-  }
-
-  h1{
-    font-size:48px;
-  }
-
-  .desc{
-    font-size:15px;
-  }
-
-  .fanny{
-    height:48%;
-  }
-
-  .hud{
-    gap:8px;
-  }
-
-  .card{
-    padding:15px;
-  }
-
-  .value{
-    font-size:17px;
-  }
-
-  .rank img{
-    width:80px;
-    height:80px;
-  }
-
-  .rank h2{
-    font-size:21px;
-  }
-
-  .items{
-    gap:7px;
-  }
-
-  .item img{
-    width:55px;
-    height:55px;
-  }
-
-  .item-name{
-    font-size:9px;
-  }
-
-  .socials{
-    flex-direction:column;
-  }
-
-}
-
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Aetheris. — Mobile Legends Player</title>
+
+  <meta name="description"
+        content="Aetheris. — Mobile Legends player dengan rank Mythical Immortal, 62.8% win rate dan Fanny sebagai signature hero.">
+
+  <meta name="keywords"
+        content="Aetheris, Mobile Legends, Fanny, Mythical Immortal, Fanny Galactic Starhawk, MLBB">
+
+  <meta name="author" content="Aetheris.">
+
+  <meta property="og:title" content="Aetheris. — Mobile Legends Player">
+  <meta property="og:description"
+        content="Aetheris. | Mythical Immortal | 62.8% Win Rate | Fanny Main">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800&family=Rajdhani:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at 20% 20%, rgba(0, 183, 255, .12), transparent 30%),
+        radial-gradient(circle at 80% 70%, rgba(116, 0, 255, .14), transparent 30%),
+        #05070d;
+      color: #fff;
+      font-family: "Rajdhani", sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size: 45px 45px;
+      mask-image: linear-gradient(to bottom, black, transparent);
+    }
+
+    header {
+      width: 100%;
+      padding: 22px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-family: "Orbitron", sans-serif;
+      font-weight: 800;
+      letter-spacing: 3px;
+      font-size: 19px;
+      color: #fff;
+      text-shadow: 0 0 18px #00c8ff;
+    }
+
+    .status {
+      font-size: 13px;
+      letter-spacing: 2px;
+      color: #7fe8ff;
+      border: 1px solid rgba(0, 212, 255, .35);
+      padding: 7px 12px;
+      border-radius: 30px;
+      background: rgba(0, 174, 255, .07);
+    }
+
+    .hero {
+      min-height: 100vh;
+      padding: 130px 7% 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 50px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-text {
+      max-width: 620px;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      color: #58dcff;
+      font-family: "Orbitron", sans-serif;
+      font-size: 12px;
+      letter-spacing: 4px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-family: "Orbitron", sans-serif;
+      font-size: clamp(50px, 9vw, 105px);
+      line-height: .95;
+      letter-spacing: -4px;
+      margin-bottom: 20px;
+      background: linear-gradient(120deg, #fff, #7ae9ff, #8c6cff);
+      -webkit-background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 40px rgba(0, 204, 255, .15);
+    }
+
+    .subtitle {
+      font-size: 21px;
+      color: #aab6c9;
+      line-height: 1.5;
+      max-width: 530px;
+    }
+
+    .hero-image {
+      width: min(480px, 44vw);
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-image::before {
+      content: "";
+      position: absolute;
+      width: 85%;
+      height: 85%;
+      border-radius: 50%;
+      background: #00bfff;
+      filter: blur(100px);
+      opacity: .16;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-height: 650px;
+      object-fit: contain;
+      position: relative;
+      z-index: 2;
+      filter:
+        drop-shadow(0 0 25px rgba(0, 190, 255, .5))
+        drop-shadow(0 0 70px rgba(94, 53, 255, .3));
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 38px;
+    }
+
+    .stat {
+      padding: 17px 12px;
+      border: 1px solid rgba(255,255,255,.09);
+      background: rgba(255,255,255,.035);
+      border-radius: 14px;
+      backdrop-filter: blur(10px);
+    }
+
+    .stat strong {
+      display: block;
+      font-family: "Orbitron", sans-serif;
+      font-size: 18px;
+      color: #fff;
+      margin-bottom: 5px;
+    }
+
+    .stat span {
+      font-size: 12px;
+      color: #7e8ca3;
+      letter-spacing: 1px;
+    }
+
+    section {
+      width: min(1150px, 86%);
+      margin: auto;
+      padding: 80px 0;
+    }
+
+    .section-title {
+      font-family: "Orbitron", sans-serif;
+      font-size: 27px;
+      margin-bottom: 28px;
+      letter-spacing: 2px;
+    }
+
+    .section-title span {
+      color: #4bdcff;
+    }
+
+    .profile-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .card {
+      border: 1px solid rgba(255,255,255,.08);
+      background: linear-gradient(
+        145deg,
+        rgba(255,255,255,.055),
+        rgba(255,255,255,.018)
+      );
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: inset 0 0 40px rgba(0, 170, 255, .025);
+      backdrop-filter: blur(14px);
+    }
+
+    .profile-card h3 {
+      font-family: "Orbitron", sans-serif;
+      color: #64ddff;
+      margin-bottom: 18px;
+    }
+
+    .info {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+
+    .info:last-child {
+      border-bottom: 0;
+    }
+
+    .info span:first-child {
+      color: #77869c;
+    }
+
+    .info span:last-child {
+      font-weight: 700;
+    }
+
+    .rank-card {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .rank-card img {
+      width: 125px;
+      height: 125px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 25px rgba(0, 195, 255, .4));
+    }
+
+    .rank-name {
+      font-family: "Orbitron", sans-serif;
+      font-size: 23px;
+      color: #8eeaff;
+    }
+
+    .rank-desc {
+      color: #8491a6;
+      margin-top: 7px;
+    }
+
+    .build-box {
+      margin-top: 25px;
+    }
+
+    .spell {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+
+    .spell img {
+      width: 65px;
+      height: 65px;
+      border-radius: 12px;
+      object-fit: cover;
+      border: 1px solid rgba(255,255,255,.15);
+      box-shadow: 0 0 20px rgba(0, 190, 255, .18);
+    }
+
+    .spell strong {
+      display: block;
+      font-family: "Orbitron", sans-serif;
+    }
+
+    .spell span {
+      color: #748298;
+      font-size: 14px;
+    }
+
+    .items {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 14px;
+    }
+
+    .item {
+      text-align: center;
+    }
+
+    .item img {
+      width: 72px;
+      height: 72px;
+      border-radius: 12px;
+      object-fit: cover;
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: 0 0 15px rgba(0, 180, 255, .12);
+      transition: .25s;
+    }
+
+    .item img:hover {
+      transform: translateY(-6px) scale(1.05);
+      box-shadow: 0 0 25px rgba(0, 200, 255, .4);
+    }
+
+    .item p {
+      font-size: 12px;
+      color: #8996aa;
+      margin-top: 8px;
+    }
+
+    .social {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .social a {
+      text-decoration: none;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,.1);
+      background: rgba(255,255,255,.035);
+      padding: 12px 18px;
+      border-radius: 12px;
+      transition: .25s;
+    }
+
+    .social a:hover {
+      border-color: #4ddcff;
+      box-shadow: 0 0 20px rgba(0, 205, 255, .18);
+      transform: translateY(-3px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 45px 20px;
+      color: #526075;
+      font-size: 13px;
+      border-top: 1px solid rgba(255,255,255,.05);
+    }
+
+    @media (max-width: 850px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 115px;
+      }
+
+      .hero-image {
+        width: min(500px, 85vw);
+        order: -1;
+      }
+
+      .subtitle {
+        margin: auto;
+      }
+
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .profile-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .items {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 500px) {
+      header {
+        padding: 18px 5%;
+      }
+
+      .status {
+        display: none;
+      }
+
+      .hero {
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+
+      section {
+        width: 90%;
+      }
+
+      h1 {
+        font-size: 55px;
+      }
+
+      .subtitle {
+        font-size: 18px;
+      }
+
+      .stat strong {
+        font-size: 15px;
+      }
+
+      .card {
+        padding: 21px;
+      }
+
+      .rank-card {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .items {
+        gap: 10px;
+      }
+
+      .item img {
+        width: 62px;
+        height: 62px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-
-  <div class="logo">
-    AETHERIS<span>.</span>
-  </div>
-
-  <div class="online">
-    <span class="dot"></span>
-    ONLINE
-  </div>
-
+  <div class="logo">AETHERIS.</div>
+  <div class="status">ONLINE • MLBB</div>
 </header>
 
 <main>
 
-<!-- HERO -->
+  <!-- HERO -->
+  <section class="hero">
 
-<section class="hero">
+    <div class="hero-text">
+      <div class="eyebrow">MOBILE LEGENDS PLAYER</div>
 
-  <div class="hero-content">
+      <h1>Aetheris.</h1>
 
-    <div class="eyebrow">
-      MOBILE LEGENDS // PLAYER PROFILE
+      <p class="subtitle">
+        Competitive Mobile Legends player focused on
+        mechanical gameplay, fast rotations and Fanny mastery.
+      </p>
+
+      <div class="stats">
+
+        <div class="stat">
+          <strong>IMMORTAL</strong>
+          <span>RANK</span>
+        </div>
+
+        <div class="stat">
+          <strong>62.8%</strong>
+          <span>WIN RATE</span>
+        </div>
+
+        <div class="stat">
+          <strong>ALL ROLE</strong>
+          <span>ROLE</span>
+        </div>
+
+        <div class="stat">
+          <strong>FANNY</strong>
+          <span>SIGNATURE HERO</span>
+        </div>
+
+      </div>
     </div>
 
-    <h1>
-      AETHERIS<span>.</span>
-    </h1>
+    <!-- FANNY IMAGE -->
+    <div class="hero-image">
 
-    <p class="desc">
-      All Role player dengan Fanny sebagai signature hero.
-      Immortal rank dengan 62.8% Win Rate.
-    </p>
-
-    <div class="buttons">
-
-      <a class="btn" href="#profile">
-        PROFILE
-      </a>
-
-      <a class="btn" href="#build">
-        FANNY BUILD
-      </a>
-
-    </div>
-
-  </div>
-
-  <div class="fanny">
-
-    <img
-      src="assets/fanny-galactic-starhawk.png"
-      alt="Fanny Galactic Starhawk">
-
-  </div>
-
-</section>
-
-
-<!-- HUD -->
-
-<section class="hud">
-
-  <div class="card">
-    <div class="label">CURRENT RANK</div>
-    <div class="value cyan">IMMORTAL</div>
-  </div>
-
-  <div class="card">
-    <div class="label">WIN RATE</div>
-    <div class="value">62.8%</div>
-  </div>
-
-  <div class="card">
-    <div class="label">ROLE</div>
-    <div class="value">ALL ROLE</div>
-  </div>
-
-  <div class="card">
-    <div class="label">HERO</div>
-    <div class="value cyan">FANNY</div>
-  </div>
-
-</section>
-
-
-<!-- PROFILE -->
-
-<section class="section" id="profile">
-
-  <div class="title">
-    PLAYER PROFILE
-  </div>
-
-  <div class="profile">
-
-    <div class="card">
-
-      <div class="row">
-        <span>Username</span>
-        <span>Aetheris.</span>
-      </div>
-
-      <div class="row">
-        <span>Role</span>
-        <span>All Role</span>
-      </div>
-
-      <div class="row">
-        <span>Hero</span>
-        <span>Fanny</span>
-      </div>
-
-      <div class="row">
-        <span>Skin</span>
-        <span>Galactic Starhawk</span>
-      </div>
+      <img
+        src="https://pbs.twimg.com/media/HC0t83VaYAAOfan.jpg"
+        alt="Fanny Galactic Starhawk"
+        loading="eager"
+      >
 
     </div>
 
+  </section>
 
-    <div class="card">
 
-      <div class="rank">
+  <!-- PROFILE -->
+  <section>
+
+    <h2 class="section-title">
+      PLAYER <span>PROFILE</span>
+    </h2>
+
+    <div class="profile-grid">
+
+      <div class="card profile-card">
+
+        <h3>AETHERIS.</h3>
+
+        <div class="info">
+          <span>Username</span>
+          <span>Aetheris.</span>
+        </div>
+
+        <div class="info">
+          <span>Role</span>
+          <span>All Role</span>
+        </div>
+
+        <div class="info">
+          <span>Rank</span>
+          <span>Mythical Immortal</span>
+        </div>
+
+        <div class="info">
+          <span>Win Rate</span>
+          <span>62.8%</span>
+        </div>
+
+        <div class="info">
+          <span>Hero</span>
+          <span>Fanny</span>
+        </div>
+
+        <div class="info">
+          <span>Skin</span>
+          <span>Galactic Starhawk</span>
+        </div>
+
+      </div>
+
+
+      <!-- RANK -->
+      <div class="card rank-card">
 
         <img
-          src="assets/immortal.png"
-          alt="Immortal Rank">
+          src="https://static.wikia.nocookie.net/mobile-legends/images/5/51/Mythical_Immortal.png"
+          alt="Mythical Immortal Rank"
+          onerror="this.style.display='none'"
+        >
 
         <div>
+          <div class="rank-name">MYTHICAL IMMORTAL</div>
 
-          <h2>IMMORTAL</h2>
-
-          <p>
-            Current Rank
+          <p class="rank-desc">
+            Highest competitive rank in Mobile Legends.
           </p>
-
         </div>
 
       </div>
 
     </div>
 
-  </div>
-
-</section>
+  </section>
 
 
-<!-- BUILD -->
+  <!-- BUILD -->
+  <section>
 
-<section class="section" id="build">
+    <h2 class="section-title">
+      FANNY <span>LOADOUT</span>
+    </h2>
 
-  <div class="build-top">
+    <div class="card build-box">
 
-    <div class="title">
-      FANNY // BUILD
-    </div>
+      <!-- RETRIBUTION -->
+      <div class="spell">
 
-    <div class="retri">
+        <img
+          src="https://esportsku.com/wp-content/uploads/2020/03/retribution.jpeg"
+          alt="Retribution"
+        >
 
-      <img
-        src="assets/retribution.png"
-        alt="Retribution">
+        <div>
+          <strong>RETRIBUTION</strong>
+          <span>Battle Spell • Jungle</span>
+        </div>
 
-      <div>
+      </div>
 
-        <strong>RETRIBUTION</strong>
 
-        <small>BATTLE SPELL</small>
+      <!-- ITEMS -->
+      <div class="items">
+
+        <div class="item">
+          <img
+            src="https://static.wikia.nocookie.net/mobile-legends/images/8/8e/Tough_Boots.png"
+            alt="Tough Boots"
+          >
+          <p>Tough Boots</p>
+        </div>
+
+        <div class="item">
+          <img
+            src="https://static.wikia.nocookie.net/mobile-legends/images/8/8e/Blade_of_the_Heptaseas.png"
+            alt="Blade of the Heptaseas"
+          >
+          <p>Heptaseas</p>
+        </div>
+
+        <div class="item">
+          <img
+            src="https://static.wikia.nocookie.net/mobile-legends/images/5/5b/Malefic_Roar.png"
+            alt="Malefic Roar"
+          >
+          <p>Malefic Roar</p>
+        </div>
+
+        <div class="item">
+          <img
+            src="https://static.wikia.nocookie.net/mobile-legends/images/0/0a/Hunter_Strike.png"
+            alt="Hunter Strike"
+          >
+          <p>Hunter Strike</p>
+        </div>
+
+        <div class="item">
+          <img
+            src="https://static.wikia.nocookie.net/mobile-legends/images/8/8e/Blade_of_Despair.png"
+            alt="Blade of Despair"
+          >
+          <p>Blade of Despair</p>
+        </div>
+
+        <div class="item">
+          <img
+            src="https://static.wikia.nocookie.net/mobile-legends/images/5/5b/Immortality.png"
+            alt="Immortality"
+          >
+          <p>Immortality</p>
+        </div>
 
       </div>
 
     </div>
 
-  </div>
+  </section>
 
 
-  <div class="card">
+  <!-- SOCIAL -->
+  <section>
 
-    <div class="items">
+    <h2 class="section-title">
+      FIND <span>ME</span>
+    </h2>
 
-      <div class="item">
-        <img src="assets/item-1.png" alt="Fanny Item 1">
-        <span class="item-name">ITEM 01</span>
-      </div>
+    <div class="social">
 
-      <div class="item">
-        <img src="assets/item-2.png" alt="Fanny Item 2">
-        <span class="item-name">ITEM 02</span>
-      </div>
+      <a
+        href="https://instagram.com/_ndraastwn"
+        target="_blank"
+        rel="noopener"
+      >
+        Instagram • @_ndraastwn
+      </a>
 
-      <div class="item">
-        <img src="assets/item-3.png" alt="Fanny Item 3">
-        <span class="item-name">ITEM 03</span>
-      </div>
-
-      <div class="item">
-        <img src="assets/item-4.png" alt="Fanny Item 4">
-        <span class="item-name">ITEM 04</span>
-      </div>
-
-      <div class="item">
-        <img src="assets/item-5.png" alt="Fanny Item 5">
-        <span class="item-name">ITEM 05</span>
-      </div>
-
-      <div class="item">
-        <img src="assets/item-6.png" alt="Fanny Item 6">
-        <span class="item-name">ITEM 06</span>
-      </div>
+      <a
+        href="https://tiktok.com/@ndraastwnnn"
+        target="_blank"
+        rel="noopener"
+      >
+        TikTok • @ndraastwnnn
+      </a>
 
     </div>
 
-  </div>
+  </section>
 
-</section>
-
-
-<!-- SOCIAL -->
-
-<section class="section">
-
-  <div class="title">
-    SOCIAL
-  </div>
-
-  <div class="socials">
-
-    <a
-      class="social"
-      href="https://instagram.com/_ndraastwn"
-      target="_blank"
-      rel="noopener">
-
-      <small>INSTAGRAM</small>
-      <strong>@_ndraastwn</strong>
-
-    </a>
-
-    <a
-      class="social"
-      href="https://www.tiktok.com/@ndraastwnnn"
-      target="_blank"
-      rel="noopener">
-
-      <small>TIKTOK</small>
-      <strong>@ndraastwnnn</strong>
-
-    </a>
-
-  </div>
-
-</section>
+</main>
 
 
 <footer>
-  AETHERIS. // MOBILE LEGENDS PLAYER
+  © 2026 Aetheris. • Mobile Legends Player
 </footer>
-
-</main>
 
 </body>
 </html>
